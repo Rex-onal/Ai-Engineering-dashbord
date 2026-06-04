@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-const DATA_DIR = path.join(__dirname, 'data');
+const DATA_DIR = path.join(process.cwd(), 'backend', 'data');
 const PHASES_FILE = path.join(DATA_DIR, 'phases.json');
 const PROGRESS_FILE = path.join(DATA_DIR, 'progress.json');
 
@@ -86,6 +86,10 @@ if (fs.existsSync(frontendBuildPath)) {
   });
 }
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+export default app;
