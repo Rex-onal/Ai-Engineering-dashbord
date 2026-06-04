@@ -6,7 +6,9 @@ import ResourceCard from './components/ResourceCard';
 import ProjectCard from './components/ProjectCard';
 import Footer from './components/Footer';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = window.location.origin.includes('localhost') || window.location.origin.includes('127.0.0.1')
+  ? 'http://localhost:5000/api'
+  : '/_/backend/api';
 
 // Local static backup data for immediate load or offline fallback
 const FALLBACK_PHASES = [
