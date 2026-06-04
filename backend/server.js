@@ -13,7 +13,10 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-const DATA_DIR = path.join(process.cwd(), 'backend', 'data');
+const cwd = process.cwd();
+const DATA_DIR = cwd.endsWith('backend') || cwd.endsWith('backend\\')
+  ? path.join(cwd, 'data')
+  : path.join(cwd, 'backend', 'data');
 const PHASES_FILE = path.join(DATA_DIR, 'phases.json');
 const PROGRESS_FILE = path.join(DATA_DIR, 'progress.json');
 
