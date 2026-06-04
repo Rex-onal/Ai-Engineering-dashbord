@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2563EB;
+  --color-accent: #DBEAFE;
+  --color-navy: #1E3A5F;
+  --color-card: #F8FAFC;
+  --color-neutralBorder: #E2E8F0;
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Geist', monospace;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: #FFFFFF;
+  color: var(--color-navy);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar for sleek developer dashboard aesthetics */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #DBEAFE;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563EB;
+}

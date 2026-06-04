@@ -1,0 +1,16 @@
+# Dependency directories
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Production builds
+frontend/dist/
+
+# Local/Development persistence database
+backend/data/progress.json
+
+# IDE and temporary files
+.gemini/
+stitch_ui.html
+.DS_Store
+Thumbs.db
